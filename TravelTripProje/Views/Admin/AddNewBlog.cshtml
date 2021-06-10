@@ -1,0 +1,37 @@
+﻿@model Blogs
+@{
+    ViewBag.Title = "AddNewBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yeni Blog Eklemen Sayfası</h2>
+<br />
+
+<form class="form-group" method="post">
+    <div>
+        <label>Başlık</label>
+        @Html.TextBoxFor(x => x.LayoutBlog, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Beğeni Puanı</label>
+        @Html.TextBoxFor(x => x.BlogPuan, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Tarih</label>
+        @Html.TextBoxFor(x => x.VisitTime , new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Fotograf URL</label>
+        @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Deneyimini Anlat</label>
+        @Html.TextAreaFor(x => x.BlogDescription, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-primary"> Ekle </button>
+</form>

@@ -1,0 +1,38 @@
+﻿@model List<Blogs>
+<div class="con-bot">
+
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        if (i != 2)
+        {
+            <div class="left">
+                <div class="bot-left">
+                    <img src="@Model[i].BlogImage" alt="" style="width:300px; height:150px" />
+                </div>
+                <div class="left-text">
+                    <h4>@Model[i].LayoutBlog</h4>
+                    <span class="doller">@Model[i].VisitTime.Value.ToString("dd.MM.yyyy")</span>
+                    <p>@Model[i].BlogDescription.Substring(0,Model[i].BlogDescription.Substring(0,80).LastIndexOf(" "))</p>
+                    <p><a href="/Blog/BlogDetail/@Model[i].ID"><span class="read">Read More >></span></a></p>
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="right">
+                <div class="bot-left">
+                    <img src="@Model[i].BlogImage" alt="" style="width:300px; height:150px"/>
+                </div>
+                <div class="left-text">
+
+                    <h4>@Model[i].LayoutBlog</h4>
+                    <span class="doller">@Model[i].VisitTime.Value.ToString("dd.MM.yyyy")</span>
+                    <p>@Model[i].BlogDescription.Substring(0,Model[i].BlogDescription.Substring(0,80).LastIndexOf(" "))</p>
+                    <p><a href="/Blog/BlogDetail/@Model[i].ID"><span class="read">Read More >></span></a></p>
+                </div>
+            </div>
+            <div class="clear"></div>
+        }
+    }
+</div>
+

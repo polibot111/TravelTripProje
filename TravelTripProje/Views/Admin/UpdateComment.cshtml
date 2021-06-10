@@ -1,0 +1,38 @@
+﻿@model Comments
+@{
+    ViewBag.Title = "UpdateComment";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>UpdateComment</h2>
+
+@using (Html.BeginForm("UpdateComment", "Admin", FormMethod.Post))
+{
+    <div>
+        <label>ID</label>
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <br />
+
+    <div>
+        <label>Kullanıcı Adı</label>
+        @Html.TextBoxFor(x => x.Commentator, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Blog Başlığı</label>
+        @Html.TextBoxFor(x => x.Blog.LayoutBlog, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Mail</label>
+        @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Yorum</label>
+        @Html.TextAreaFor(x => x.CommentTor, 15, 1, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-success"> Blog Güncelle </button>
+}

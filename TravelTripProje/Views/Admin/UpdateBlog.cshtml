@@ -1,0 +1,42 @@
+﻿@model Blogs
+@{
+    ViewBag.Title = "UpdateBlog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Blog Güncelleme Sayfası</h2>
+<br />
+@using (Html.BeginForm("UpdateBlog", "Admin", FormMethod.Post))
+{
+    <div>
+        <label>ID</label>
+        @Html.TextBoxFor(x => x.ID, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <br />
+    <div>
+        <label>Başlık</label>
+        @Html.TextBoxFor(x => x.LayoutBlog, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Beğeni Puanı</label>
+        @Html.TextBoxFor(x => x.BlogPuan, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Tarih</label>
+        @Html.TextBoxFor(x => x.VisitTime, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Fotograf URL</label>
+        @Html.TextBoxFor(x => x.BlogImage, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label>Deneyimini Anlat</label>
+        @Html.TextAreaFor(x => x.BlogDescription, 15, 1, new { @class = "form-control" })
+    </div>
+    <br />
+    <button class="btn btn-success"> Blog Güncelle </button>
+}

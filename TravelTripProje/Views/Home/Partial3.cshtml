@@ -1,0 +1,41 @@
+﻿@model List<Blogs>
+@{int z = 0;}
+<div class="padding1">
+    <h4>Our Best Places</h4>
+    <div class="box-left">
+        @for (int i = 0; i < Model.Count / 2; i++)
+        {
+            <div class="bot-img">
+                <a href="/Blog/BlogDetail/@Model[i].ID">
+                    <img src="@Model[i].BlogImage" style="width:120px; height:80px;" alt="@{z++;}" />
+                </a>
+            </div>
+            <div class="bot-desc">
+                <p>
+                    Puan:@Model[i].BlogPuan
+                    @Model[i].BlogDescription.Substring(0, Model[i].BlogDescription.Substring(0, 80).LastIndexOf(" "))
+                </p>
+            </div>
+            <div class="clear"></div>
+        }
+    </div>
+    <div class="box1-left">
+        @for (int i = z; i < Model.Count; i++)
+        {
+            <div class="bot-img">
+                <a href="/Blog/BlogDetail/@Model[i].ID">
+                    <img src="@Model[i].BlogImage" style="width:120px; height:80px;"  alt="" />
+                </a>
+            </div>
+            <div class="bot-desc1">
+                <p>
+                    Puan:@Model[i].BlogPuan
+                    @Model[i].BlogDescription.Substring(0, Model[i].BlogDescription.Substring(0, 80).LastIndexOf(" "))
+                </p>
+            </div>
+            <div class="clear"></div>
+        }
+
+
+    </div>
+</div>

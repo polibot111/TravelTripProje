@@ -1,0 +1,49 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title> Master login Form Responsive Widget Template  :: w3layouts</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content=" Master  Login Form Widget Tab Form,Login Forms,Sign up Forms,Registration Forms,News letter Forms,Elements" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href="~/Login/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Login///fonts.googleapis.com/css?family=Cormorant+SC:300,400,500,600,700" rel="stylesheet">
+    <link href="~/Login///fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="padding-all">
+        <div class="header">
+            <h1>Tatil & Seyahat Blogu  Login Form</h1>
+        </div>
+
+        <div class="design-w3l">
+            <div class="mail-form-agile">
+                @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                {
+                    <input type="text" name="UserName" placeholder="Kullanıcı Adı" required="" />
+                    <input type="password" name="password" class="padding" placeholder="Şifre" required="" />
+                    <input type="submit" value="Giriş Yap">
+                }
+                <a href="/Home/Index/"  class="btn btn-primary" style="margin-top:20px;">Siteye Git</a>
+            </div>
+            <div class="clear"> </div>
+        </div>
+
+       
+    </div>
+</body>
+</html>
